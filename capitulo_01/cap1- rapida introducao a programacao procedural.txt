@@ -1,0 +1,119 @@
+Abaixo está a transcrição fiel e completa do conteúdo de cada uma das imagens fornecidas.
+### Arquivo: a587954b-2ee6-494d-b2a3-d204e5da2b97
+ * O "Lindo Coração" do Python
+**1**
+**Rápida Introdução à Programação Procedural**
+Este capítulo irá lhe fornecer informação suficiente para você começar a escrever programas com Python. Recomendamos, de forma veemente, que você instale o Python caso ainda não o tenha feito, a fim de que possa obter experiência prática para reforçar o que aprendeu aqui. (A introdução explica como obter e instalar Python nas principais plataformas – ver página 4.)
+Esta primeira seção do capítulo vai lhe mostrar como criar e executar programas Python. Você pode usar o seu editor de texto simples para escrever seu código Python, mas o ambiente de programação IDLE, que será discutido nesta seção, não lhe fornece apenas um editor de códigos, mas também algumas funcionalidades adicionais, incluindo facilidades para experimentação com código Python e para a depuração de programas Python.
+A segunda seção apresenta oito partes-chave do Python, que por si mesmas são suficientes para escrever programas muito úteis. Essas partes serão todas abordadas de maneira mais extensa em capítulos posteriores e, conforme o livro for progredindo, serão suplementadas por todo o restante do Python; de modo que, ao final do livro, você já terá aprendido toda a linguagem e estará apto a utilizar tudo o que ela te oferece em seus programas.
+A seção final deste capítulo introduz dois pequenos programas, os quais usam o subconjunto das características do Python, introduzidos na segunda seção, de forma que você poderá provar imediatamente o gosto da programação Python.
+**Criando e Executando Programas Python**
+O código Python pode ser escrito com qualquer editor de texto simples que possa carregar e salvar o texto usando uma das codificações de caracteres: o ASCII ou o unicode UTF-8. Por padrão, os arquivos Python usam a codificação de caracteres UTF-8, um subconjunto de ASCII que pode representar muito bem qualquer caractere, em qualquer linguagem. Arquivos Python, geralmente, possuem uma extensão .py, ainda que, em alguns sistemas semelhantes ao Unix (por exemplo, Linux e Mac OS X), algumas aplicações Python não pos-
+*Nota lateral:* Codificação de caracteres 85
+7
+### Arquivo: 249ecc73-6b46-4b99-b49d-a2810d06f6e4
+8  Capítulo 1. Rápida Introdução à Programação Procedural
+suem extensão, e os programas Python GUI (Graphical User Interface), geralmente, vêm com uma extensão .pyw, em particular no Windows e no Mac OS X. Neste livro, sempre usaremos uma extensão .py para programas de terminais do Python e módulos Python, e .pyw para programas GUI. Todos os exemplos apresentados neste livro executam sem alteração em todas as plataformas que o Python 3 está disponível.
+Apenas para ter certeza de que tudo está funcionando corretamente e para apresentar o primeiro exemplo clássico, crie um arquivo chamado hello.py em um editor de texto simples (o bloco de notas do Windows já serve muito bem – logo iremos usar um editor melhor) com o seguinte conteúdo:
+```python
+#!/usr/bin/env python3
+
+print("Hello", "World!")
+
+```
+A primeira linha é um comentário. No Python, os comentários começam com um # e continuam até o final da mesma linha. (Iremos explicar o comentário um tanto enigmático mais adiante.) A segunda linha está em branco fora de strings delimitadas, o Python ignora linhas em branco, mas elas são geralmente muito úteis para humanos quebrarem blocos de código muito grandes, tornando-os mais fáceis de se ler. A terceira linha é um código Python. Aqui, a função print() foi evocada com dois argumentos, cada um do tipo str (string [cadeia]; isto é, uma sequência de caracteres).
+Cada comando encontrado em um arquivo .py é executado em turnos, começando com o primeiro e, progressivamente, linha por linha. Isso é diferente de algumas outras linguagens, por exemplo, C++ e Java, as quais possuem uma função particular ou um método de nome especial pelo qual elas iniciam. O fluxo de controle pode ser desviado, como veremos quando discutirmos as estruturas de controle do Python na próxima seção.
+Iremos assumir que os usuários do Windows mantêm seus códigos Python no diretório C:\py3eg e que os usuários Unix, Linux e Mac OS X mantêm seus códigos no diretório $HOME/py3eg. Salve, então, hello.py dentro do diretório py3eg e feche o editor de texto.
+Agora que já temos um programa, podemos executá-lo. Os programas Python são executados pelo interpretador do Python e, normalmente, isso é feito dentro de um terminal do Windows. No Windows, este terminal é chamado de "Prompt de Comando" ou "DOS Prompt" ou "MS-DOS Prompt", ou algo similar, e, em geral, está disponível em (iniciar) Start->All (todos os programas) Programs->(acessórios) Accessories. No Mac OS X, o terminal é fornecido através do programa Terminal.app (localizado por default em Aplications/Utilities), que também pode ser encontrado utilizando o Finder (Localizador) e, em outros Unixes, podemos usar um xterm ou um terminal que é fornecido pelo ambiente de janelas, por exemplo, konsole ou gnome-terminal.
+Inicie um Prompt de Comando e, no Windows, entre com os seguintes comandos (os quais pressupõem que o Python já esteja instalado no local padrão) – a saída do Prompt de Comando pode ser vista em **negrito**; e o que você digitou em aparência simples, clara ou limpa.
+### Arquivo: ed03595e-3bc6-46e9-96d9-f8302a7729cd
+Rápida Introdução à Programação Procedural  9
+```text
+C:\>cd c:\py3eg
+C:\py3eg>C:\Python30\python.exe hello.py
+
+```
+Desde que o comando cd (change directory [mudar diretório]) possua um caminho absoluto, não importa de qual diretório você inicie.
+Usuários Unix devem entrar com este código (supondo que o Python 3 esteja no PATH):*
+```text
+$ cd $HOME/py3eg
+$ python3 hello.py
+
+```
+Em ambos os casos, a saída será a mesma:
+```text
+Hello World!
+
+```
+Note que, a menos que seja declarado o contrário, o comportamento do Python no Mac OS X é o mesmo em qualquer sistema Unix. De fato, a qualquer momento que nos referimos ao "Unix", isso pode ser subentendido como Linux, BSD, Mac OS X e a maioria dos sistemas derivados do Unix.
+Ainda que o programa possua apenas um comando executável, ao rodá-lo podemos inferir alguma informação sobre a função print(). Como print() é um item embutido da linguagem Python, não precisamos "importar" ou "incluir" o mesmo de uma biblioteca para fazer uso dela. Ademais, ela separa cada item que será impresso com um único espaço e imprime uma nova linha após o último item ser impresso. Esses são comportamentos padrão que podem ser modificados, como veremos a seguir. Outra coisa digna de nota a respeito de print() é que ele pode receber quantos argumentos quisermos dar.
+*Nota lateral:* A Função print() 171
+Digitar essas linhas de comando para invocar nosso programa Python poderia rapidamente se transformar em algo extremamente tedioso. Felizmente, tanto no Windows como no Unix, podemos usar uma abordagem mais conveniente. Supondo que estamos no diretório do Windows py3eg, podemos apenas digitar:
+```text
+C:\py3eg\>hello.py
+
+```
+O Windows usa seu registro de associações de arquivos para chamar automaticamente o interpretador de Python quando um nome de arquivo com extensão .py é iniciado dentro de um terminal.
+Se a saída no Windows aparecer como:
+```text
+('Hello', 'World!')
+
+```
+isso significa que o Python 2 está no sistema e está sendo invocado no lugar do Python 3. Uma solução é modificar a associação do arquivo .py do Python 2 para o Python 3. Outra solução (menos conveniente, porém mais segura) é co-
+ * O prompt do Unix pode ser diferente do $ mostrado aqui; caso isso aconteça, saiba que não importa o que seja.
+### Arquivo: 4205671a-9b0f-4408-9e1c-eec0178f9c5f
+10   Capítulo 1. Rápida Introdução à Programação Procedural
+locar o interpretador do Python 3 no path (caminho) (assumindo que ele esteja instalado no local padrão) e executar explicitamente todas as vezes:
+```text
+C:\py3eg\>path=c:\python30;%path%
+C:\py3eg\>python hello.py
+
+```
+Pode ser mais conveniente criar um arquivo py3.bat com a linha única path=c:\python30;%path% e salvar este arquivo no diretório C:\Windows. Depois, toda vez que você iniciar um terminal para executar programas do Python 3, comece executando py3.bat. Ou, de forma alternativa, você pode ter o py3.bat executado de forma automática. Para fazer isso, modifique as propriedades do terminal (encontre o terminal no menu Start ou Iniciar, depois clique com o botão direito do mouse para aparecer a tela de Propriedades) e no texto-alvo da aba de atalho anexe o texto "/u /k c:\windows\py3.bat" (note os espaços anteriores, entre e depois das opções "/u" e "/k", e certifique-se de ter adicionado isto no final, após "cmd.exe").
+No Unix, devemos primeiro tornar o arquivo executável, e então poderemos executá-lo:
+```text
+$ chmod +x hello.py
+$ ./hello.py
+
+```
+Precisamos executar o comando chmod apenas uma vez, é claro; depois disso, podemos digitar simplesmente ./hello.py e o programa irá rodar.
+No Unix, quando um programa é invocado no terminal, os primeiros dois bytes do arquivo são lidos.* Se estes bytes são os caracteres ASCII #!, o shell assume que o arquivo deve ser executado por um interpretador e que a primeira linha do arquivo especifica qual interpretador usar. Essa linha é chamada de linha *shebang* (execução shell) e, se presente, deverá ser a primeira linha do arquivo.
+A linha shebang é comumente escrita em uma destas duas formas:
+```text
+#!/usr/bin/python3
+
+```
+ou:
+```text
+#!/usr/bin/env python3
+
+```
+Se a escrita usar a primeira forma, o interpretador especificado é usado. Essa forma pode ser necessária para os programas Python que serão executados por um servidor da web, ainda que o caminho especificado possa ser diferente do que foi mostrado. Se a escrita usar a segunda forma, o primeiro interpretador python3 encontrado no ambiente corrente do shell é usado. A segunda forma é mais versátil, porque permite a possibilidade de o interpretador Python 3 não ficar localizado em /usr/bin (por exemplo, ele poderá ficar em /usr/local/bin ou instalado em $HOME). A linha shebang não é necessária (mas é inofen-
+ * A interação entre o usuário e o terminal é gerenciado por um programa "shell". A distinção entre o terminal e o shell não nos diz respeito aqui, então iremos utilizar os termos alternadamente.
+### Arquivo: 48147994-f868-46d2-95e1-35eeb7dd0e6f
+Rápida Introdução à Programação Procedural  11
+siva) no Windows; todos os exemplos neste livro possuem uma linha shebang da segunda forma, ainda que não a mostremos.
+Perceba que para os sistemas Unix assumimos que o nome do executável do Python 3 (ou um link simbólico) no PATH é python3. Se este não é seu caso, você vai precisar mudar a linha shebang nos exemplos para usar o nome correto (ou corrigir o nome e caminho caso você esteja usando a primeira forma) ou criar um link simbólico do executável Python 3 para o nome python3 em algum lugar no PATH.
+Muitos editores de textos poderosos, tais como o Vim e o Emacs, vêm com um suporte embutido para editar programas Python. Esse suporte tipicamente envolve destaque colorido de sintaxe e uma correta identação ou desidentação das linhas. Uma alternativa é usar o ambiente de programação IDLE do Python. No Windows e no Mac OS X, o IDLE é instalado de modo padrão; nos Unixes, ele é, em geral, fornecido como um pacote separado, como descrito na Introdução.
+Como é mostrado na tela da Figura 1.1., o IDLE possui um estilo que nos transporta à época do Motif no Unix e do Windows 95. Isso acontece porque ele usa a biblioteca baseada em Tk Tkinter GUI (que será analisada no Capítulo 13), em vez de usar as mais poderosas e modernas bibliotecas GUI, como PyGtk, PyQt ou wxPython. As razões para o uso da Tkinter são uma mistura de história, condições de licença liberal e o fato de que a Tkinter é muito menor que as outras bibliotecas GUI. No lado positivo, o IDLE vem como padrão com o Python e é muito simples de aprender e usar.
+*(Imagem reproduzindo uma janela do "Python Shell")*
+```python
+>>> import SortedDict
+>>> file_sizes = SortedDict.SortedDict(key=lambda x: x.lower())
+>>> for name in os.listdir("."):
+        file_sizes[name] = os.path.getsize(name)
+
+>>> len(file_sizes)
+205
+>>> print(file_sizes)
+{'Abstract.py': 4591, 'Abstract.pyc': 8716, 'Account.py': 5354, 'Account.pyc': 7172, 'alltests.py': 58554, 'Appliance.py': 2000, 'Appliance.pyc': 3404, 'Ascii.py': 1668, 'Ascii.pyc': 1621, 'Atomic.py': 5262, 'Atomic.pyc': 4999, 'average1_ans.py': 1223, 'average2_ans.py': 1765, 'awfulpoetry1_ans.py': 1304, 'awfulpoetry2_ans.py': 1576, 'base64image.py': 1734, 'bigdigits.py': 1890, 'bigdigits_ans.py': 1961, 'BikeStock.py': 9516, 'BikeStock.pyc': 11649, 'BikeStock_ans.py': 9488, 'BikeStock_ans.pyc': 11744, 'BinaryRecordFile.py': 9191, 'BinaryRecordFile.pyc': 10410, 'BinaryRecordFile_ans.py': 5231, 'BinaryReco
+
+```
+**Figura 1.1.** Shell Python do IDLE
+O IDLE fornece três características: a habilidade para entrada de expressões e código Python e ver os resultados diretamente no Shell Python; um editor de código que fornece destaque colorido de sintaxe e suporte de indentação; e um depurador que pode ser usado para avançar passo a passo no código, a fim de ajudar a identificar e acabar com os erros de programação
+### Arquivo: c9386a44-4e93-48ae-a8cc-c7736c61c0a8
+12  Capítulo 1. Rápida Introdução à Programação Procedural
+(bugs). O Shell Python é especialmente útil para testar algoritmos simples, fragmentos de código e expressões regulares, além de ser usado também como uma calculadora poderosa e muito flexível.
+Muitos outros ambientes de desenvolvimento Python estão disponíveis, mas recomendamos que você use o IDLE, pelo menos no começo. Uma alternativa é criar seus programas no editor de texto simples de sua escolha e depurá-los usando chamadas para print().
+É possível invocar o interpretador do Python sem especificar um programa Python. Se isso for feito, o interpretador inicia de modo interativo. Nesse modo, é possível entrar com comandos Python e ver os resultados exatamente da mesma forma como se usássemos a janela IDLE do Python Shell e com os mesmos prompts >>>. Mas o IDLE é muito mais fácil de usar; portanto, recomendamos usar o IDLE para experimentação de fragmentos de código. Os pequenos e interativos exemplos que mostramos até agora pressupõem serem executados em um interpretador interativo do Python ou no Shell Python IDLE.
+Agora, já sabemos como criar e executar programas Python, mas, claramente, não chegaremos muito longe conhecendo apenas uma única função. Na próxima seção, iremos aumentar de maneira considerável nosso conhecimento Python. Isso nos tornará aptos a criar pequenos, mas muito úteis, programas Python, algo que iremos fazer na última seção deste capítulo.

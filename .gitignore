@@ -1,0 +1,21 @@
+# Python cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Audio and video files (like the book recordings)
+*.m4a
+*.mp4
+*.mp3
+*.wav
+*.mov
+*.avi
+
+# OS files
+Thumbs.db
+.DS_Store
